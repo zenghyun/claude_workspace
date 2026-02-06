@@ -1,0 +1,307 @@
+/* 개발자 웹 이력서 - 모던 다크 테마 CSS */
+
+/* 스무스 스크롤 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 섹션 스크롤 오프셋 (네비게이션 높이 고려) */
+section[id] {
+    scroll-margin-top: 80px;
+}
+
+/* 스크롤바 커스터마이징 - 다크 테마 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2a2a2a;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3a3a3a;
+}
+
+/* 코드 배경 패턴 */
+.code-bg {
+    background-color: #0a0a0a;
+    background-image:
+        linear-gradient(rgba(10,10,10,0.95), rgba(10,10,10,0.95)),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 24px,
+            rgba(20, 184, 166, 0.03) 24px,
+            rgba(20, 184, 166, 0.03) 25px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 24px,
+            rgba(20, 184, 166, 0.03) 24px,
+            rgba(20, 184, 166, 0.03) 25px
+        );
+    background-size: 100% 100%, 100% 100%, 100% 100%;
+}
+
+.code-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(20, 184, 166, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* 네비게이션 링크 스타일 - 다크 테마 */
+.nav-link {
+    color: #9ca3af;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #14b8a6;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #14b8a6;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* 모바일 네비게이션 링크 - 다크 테마 */
+.mobile-nav-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #9ca3af;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+    background-color: #1a1a1a;
+    color: #14b8a6;
+}
+
+/* 소셜 아이콘 원형 스타일 */
+.social-icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #2a2a2a;
+    border-radius: 50%;
+    color: #9ca3af;
+    transition: all 0.3s ease;
+}
+
+.social-icon-circle:hover {
+    border-color: #14b8a6;
+    color: #14b8a6;
+    transform: translateY(-2px);
+}
+
+/* 서비스 카드 스타일 */
+.service-card {
+    position: relative;
+    background-color: #1a1a1a;
+    border-left: 3px solid #14b8a6;
+    border-radius: 0 1rem 1rem 0;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    background-color: #1f1f1f;
+    transform: translateY(-4px);
+}
+
+.service-number {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.03);
+    line-height: 1;
+    pointer-events: none;
+}
+
+/* 스킬 태그 스타일 */
+.skill-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #2a2a2a;
+    color: #d1d5db;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+    background-color: rgba(20, 184, 166, 0.2);
+    color: #14b8a6;
+}
+
+/* 프로젝트 카드 스타일 */
+.project-card {
+    background-color: #1a1a1a;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(20, 184, 166, 0.3);
+}
+
+/* 프로젝트 태그 */
+.project-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(20, 184, 166, 0.1);
+    color: #14b8a6;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 0.25rem;
+}
+
+/* Contact 카드 스타일 */
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: #1a1a1a;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    background-color: #1f1f1f;
+    transform: translateY(-4px);
+}
+
+.contact-icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover .contact-icon-circle {
+    transform: scale(1.1);
+}
+
+/* 페이드 인 애니메이션 */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 지연 효과 */
+.fade-in-up:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.fade-in-up:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.fade-in-up:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.fade-in-up:nth-child(5) {
+    transition-delay: 0.4s;
+}
+
+/* 선택 텍스트 색상 */
+::selection {
+    background-color: #14b8a6;
+    color: #0a0a0a;
+}
+
+/* 포커스 스타일 (접근성) */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #14b8a6;
+    outline-offset: 2px;
+}
+
+/* 프린트 스타일 */
+@media print {
+    header,
+    footer,
+    #mobile-menu-btn {
+        display: none !important;
+    }
+
+    section {
+        page-break-inside: avoid;
+    }
+
+    .fade-in-up {
+        opacity: 1;
+        transform: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+}
+
+/* 반응형 조정 */
+@media (max-width: 768px) {
+    .service-number {
+        font-size: 3rem;
+    }
+
+    .social-icon-circle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-icon-circle {
+        width: 48px;
+        height: 48px;
+    }
+}
