@@ -1,1 +1,10 @@
 .DS_Store
+
+# Symlinked projects (reference only)
+pms-front
+smp-admin-console
+smp-super-admin-console
+halo
+
+# MCP config (contains API tokens)
+.mcp.json
